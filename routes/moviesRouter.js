@@ -1,20 +1,10 @@
 const router = require('express').Router();
 const {
-  updateUserMe,
-  getUserMe,
-} = require('../controllers/userController');
-const {
   getMovies,
   createMovie,
   deleteMovie,
 } = require('../controllers/moviesController');
-const { validateUserInfo, validateMovieId, validateMovie } = require('../utils/validation');
-
-// возвращает информацию о пользователе (email и имя)
-router.get('/users/me', getUserMe);
-
-// обновляет информацию о пользователе (email и имя)
-router.patch('/users/me', validateUserInfo, updateUserMe);
+const { validateMovieId, validateMovie } = require('../utils/validation');
 
 // возвращает все сохранённые текущим  пользователем фильмы
 router.get('/movies', getMovies);
