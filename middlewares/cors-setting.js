@@ -1,6 +1,6 @@
 const allowedCors = [
-  'http://mestozakharova.nomoredomains.icu',
-  'https://mestozakharova.nomoredomains.icu',
+  'http://movies.zakharova.nomoredomains.club',
+  'https://movies.zakharova.nomoredomains.club',
   'localhost:3000',
 ];
 

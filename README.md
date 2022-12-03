@@ -1,7 +1,7 @@
 # movies-explorer-api
 
-* IP 
-* Backend 
+* IP 158.160.2.122
+* Backend https://api.movies.zakharova.nomoredomains.club
 
 ## Технологии и инструменты
 
