@@ -65,5 +65,11 @@ module.exports.updateUserMe = (req, res, next) => {
     runValidators: true,
   })
     .then((user) => res.send(user))
-    .catch(next);
+    .catch((err) => {
+      if (err.code === 11000) {
+        next(new ConflictError('Такой пользователь уже существует'));
+        return;
+      }
+      next(err);
+    });
 };
