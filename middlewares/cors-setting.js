@@ -6,7 +6,6 @@ const allowedCors = [
 
 const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
 
-// eslint-disable-next-line consistent-return
 module.exports = (req, res, next) => {
   const { method } = req;
   const { origin } = req.headers;
@@ -23,5 +22,5 @@ module.exports = (req, res, next) => {
     res.header('Access-Control-Allow-Headers', requestHeaders);
     return res.end();
   }
-  next();
+  return next();
 };
