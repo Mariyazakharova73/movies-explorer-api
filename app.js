@@ -13,8 +13,8 @@ const NotFoundError = require('./errors/not-found-err');
 const { validateLogin, validateUser } = require('./utils/validation');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const corsSetting = require('./middlewares/cors-setting');
+const { PORT_CONFIG, DB_CONFIG } = require('./utils/config');
 
-const { PORT = 3000, NODE_ENV, URL_DB } = process.env;
 const app = express();
 // пишем выше роутинга
 app.use(cors());
@@ -31,13 +31,11 @@ app.use('*', auth, (req, res, next) => {
   next(new NotFoundError('Неправильный URL или метод'));
 });
 
-mongoose.connect(
-  NODE_ENV === 'production' ? URL_DB : 'mongodb://localhost:27017/moviesdb',
-);
+mongoose.connect(DB_CONFIG);
 
 app.use(errorLogger); // подключаем логгер ошибок
 app.use(errors()); // обработчик ошибок celebrate
 
 app.use(errorHandler);
 
-app.listen(PORT);
+app.listen(PORT_CONFIG);
