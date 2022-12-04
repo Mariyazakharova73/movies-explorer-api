@@ -1,0 +1,18 @@
+const BAD_REQUEST_ERROR = 400;
+const UNAUTHORIZAD_ERROR = 401;
+const FORBIDDEN_ERROR = 403;
+const NOT_FOUND_ERROR = 404;
+const CONFLICT_ERROR = 409;
+const INTERNAL_SERVER_ERROR = 500;
+
+const LINK_CHECKING = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-/]))?/;
+
+module.exports = {
+  BAD_REQUEST_ERROR,
+  UNAUTHORIZAD_ERROR,
+  FORBIDDEN_ERROR,
+  NOT_FOUND_ERROR,
+  LINK_CHECKING,
+  CONFLICT_ERROR,
+  INTERNAL_SERVER_ERROR,
+};
